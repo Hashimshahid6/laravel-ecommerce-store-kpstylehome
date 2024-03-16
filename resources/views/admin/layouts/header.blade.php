@@ -146,6 +146,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('admin.list')}}" class="nav-link @if(Request::segment(2) == 'admin') active @endif">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.logout')}}" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>

@@ -46,6 +46,12 @@ class AdminController extends Controller
     }//
 
     public function update($id, Request $request){
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'required',
+            'status' => 'required',
+        ]);
         $user = User::find($request->id);
         $user->name = $request->name;
         $user->email = $request->email;
