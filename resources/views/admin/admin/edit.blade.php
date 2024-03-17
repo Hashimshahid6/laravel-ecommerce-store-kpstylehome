@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add New Admin</h1>
+            <h1>Edit Admin Details</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
             <a href="{{route('admin.list')}}" class="btn btn-primary">Back</a>
@@ -21,18 +21,18 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Admin</h3>
+                            <h3 class="card-title">Admin Details</h3>
                         </div>
                         <form method="post" action="">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" value="{{old('name', $userRecord->name)}}" id="name"  name="name" placeholder="Enter Name">
+                                    <input type="text" class="form-control" value="{{$userRecord->name}}" id="name"  name="name" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email address</label>
-                                    <input type="email" class="form-control" id="email" value="{{old('email', $userRecord->email)}}" name="email" placeholder="Enter Email" required>
+                                    <input type="email" class="form-control" id="email" value="{{$userRecord->email}}" name="email" placeholder="Enter Email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

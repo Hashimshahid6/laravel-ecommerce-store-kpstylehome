@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +22,19 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
     Route::get('/admin/admin/list', [AdminController::class, 'list'])->name('admin.list');
     Route::get('/admin/admin/add', [AdminController::class, 'add'])->name('admin.add');
     Route::post('/admin/admin/add', [AdminController::class, 'insert'])->name('admin.insert');
     Route::get('/admin/admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::post('/admin/admin/edit/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+
+    Route::get('/admin/category/list', [CategoryController::class, 'list'])->name('category.list');
+    Route::get('/admin/category/add', [CategoryController::class, 'add'])->name('category.add');
+    Route::post('/admin/category/add', [CategoryController::class, 'insert'])->name('category.insert');
+    Route::get('/admin/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::post('/admin/category/edit/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('/admin/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
 });
