@@ -6,10 +6,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add New Category</h1>
+            <h1>Add New Sub Category</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{route('category.list')}}" class="btn btn-primary">Back</a>
+            <a href="{{route('sub_category.list')}}" class="btn btn-primary">Back</a>
           </div>
         </div>
       </div>
@@ -21,13 +21,23 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Category</h3>
+                            <h3 class="card-title">Add New Sub Category</h3>
                         </div>
                         <form method="post" action="">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Category Name <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="category_id" id="category_id">
+                                        <option value="">Select Category</option>
+                                        @foreach($categories as $category)
+                                            <option {{(old('category_id') == $category->id) ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="text-danger">{{ $errors->first('category_id') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>SubCategory Name</label>
                                     <input type="text" class="form-control" id="name" value="{{old('name')}}" name="name" placeholder="Enter Name">
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>

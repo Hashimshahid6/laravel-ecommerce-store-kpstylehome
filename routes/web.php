@@ -6,6 +6,7 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,5 +37,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::post('/admin/category/edit/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('/admin/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+
+    Route::get('/admin/sub_category/list', [SubCategoryController::class, 'list'])->name('sub_category.list');
+    Route::get('/admin/sub_category/add', [SubCategoryController::class, 'add'])->name('sub_category.add');
+    Route::post('/admin/sub_category/add', [SubCategoryController::class, 'insert'])->name('sub_category.insert');
+    Route::get('/admin/sub_category/edit/{id}', [SubCategoryController::class, 'edit'])->name('sub_category.edit');
+    Route::post('/admin/sub_category/edit/{id}', [SubCategoryController::class, 'update'])->name('sub_category.update');
+    Route::get('/admin/sub_category/delete/{id}', [SubCategoryController::class, 'delete'])->name('sub_category.delete');
 
 });

@@ -16,6 +16,6 @@ class CategoryModel extends Model
         ->where('category.status', '=', 1)
         ->where('category.is_deleted', '=', 0)
         ->orderBy('category.id', 'desc')
-        ->get();
+        ->paginate(2);
     }//
 }

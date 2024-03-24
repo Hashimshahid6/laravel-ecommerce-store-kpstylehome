@@ -158,6 +158,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('sub_category.list')}}" class="nav-link @if(Request::segment(2) == 'sub_category') active @endif">
+                  <i class="nav-icon fas fa-list-alt"></i>
+                  <p>Sub Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.logout')}}" class="nav-link">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>

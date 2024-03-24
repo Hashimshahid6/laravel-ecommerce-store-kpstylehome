@@ -52,13 +52,20 @@
                       <td> {{($category->status == 1) ? 'Active' : 'Inactive'}} </td>
                       <td> {{date('d-m-Y', strtotime($category->created_at))}} </td>
                       <td>
-                        <a href="{{route('category.edit', $category->id)}}" class="btn btn-sm btn-primary">Edit</a>
-                        <a href="{{route('category.delete', $category->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                        <div class="d-flex">
+                          <a href="{{route('category.edit', $category->id)}}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <a href="{{route('category.delete', $category->id)}}" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash"></i>
+                          </a>
+                        </div>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
                 </table>
+                  {{$categories->links()}}
             </div>
           </div>
         </div>
