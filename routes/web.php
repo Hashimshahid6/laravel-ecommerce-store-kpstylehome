@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,5 +45,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/sub_category/edit/{id}', [SubCategoryController::class, 'edit'])->name('sub_category.edit');
     Route::post('/admin/sub_category/edit/{id}', [SubCategoryController::class, 'update'])->name('sub_category.update');
     Route::get('/admin/sub_category/delete/{id}', [SubCategoryController::class, 'delete'])->name('sub_category.delete');
+
+    Route::get('/admin/product/list', [ProductController::class, 'list'])->name('product.list');
+    Route::get('/admin/product/add', [ProductController::class, 'add'])->name('product.add');
+    Route::post('/admin/product/add', [ProductController::class, 'insert'])->name('product.insert');
+    Route::get('/admin/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/admin/product/edit/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/admin/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
 });

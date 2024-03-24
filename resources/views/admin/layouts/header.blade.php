@@ -146,7 +146,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link @if(Request::segment(2) == '') active @endif">
+                <a href="{{route('product.list')}}" class="nav-link @if(Request::segment(2) == 'product') active @endif">
                     <i class="nav-icon fas fa-shopping-cart"></i>
                   <p>Product</p>
                 </a>
