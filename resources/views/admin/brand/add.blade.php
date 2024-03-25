@@ -6,10 +6,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add New Category</h1>
+            <h1>Add New Brand</h1>
           </div>
           <div class="col-sm-6" style="text-align: right">
-            <a href="{{route('category.list')}}" class="btn btn-primary">Back</a>
+            <a href="{{route('brand.list')}}" class="btn btn-primary">Back</a>
           </div>
         </div>
       </div>
@@ -21,13 +21,13 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Category</h3>
+                            <h3 class="card-title">Add New Brand</h3>
                         </div>
                         <form method="post" action="">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Category Name <span class="text-danger">*</span></label>
+                                    <label>Brand Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="name" value="{{old('name')}}" name="name" placeholder="Enter Name">
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>

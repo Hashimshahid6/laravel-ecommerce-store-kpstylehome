@@ -10,7 +10,7 @@ class CategoryModel extends Model
     use HasFactory;
     protected $table = 'category';
 
-    public function categories(){
+    static public function categories(){
         return self::select('category.*', 'users.name as created_by_name')
         ->join('users', 'users.id', '=' , 'category.created_by' )
         ->where('category.status', '=', 1)

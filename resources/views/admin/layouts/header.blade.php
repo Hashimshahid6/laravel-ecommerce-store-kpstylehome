@@ -146,12 +146,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('product.list')}}" class="nav-link @if(Request::segment(2) == 'product') active @endif">
-                    <i class="nav-icon fas fa-shopping-cart"></i>
-                  <p>Product</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('category.list')}}" class="nav-link @if(Request::segment(2) == 'category') active @endif">
                   <i class="nav-icon fas fa-list-alt"></i>
                   <p>Category</p>
@@ -161,6 +155,24 @@
                 <a href="{{route('sub_category.list')}}" class="nav-link @if(Request::segment(2) == 'sub_category') active @endif">
                   <i class="nav-icon fas fa-list-alt"></i>
                   <p>Sub Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('brand.list')}}" class="nav-link @if(Request::segment(2) == 'brand') active @endif">
+                    <i class="nav-icon fas fa-tags"></i>
+                  <p>Brands</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('color.list')}}" class="nav-link @if(Request::segment(2) == 'color') active @endif">
+                    <i class="nav-icon fas fa-palette"></i>
+                    <p>Colors</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('product.list')}}" class="nav-link @if(Request::segment(2) == 'product') active @endif">
+                    <i class="nav-icon fas fa-shopping-cart"></i>
+                  <p>Product</p>
                 </a>
               </li>
               <li class="nav-item">

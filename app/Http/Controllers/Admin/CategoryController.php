@@ -55,7 +55,8 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect()->route('category.list')->with('success', 'Category Successfully Updated');
-    }//a
+    }//
+    
     public function edit($id)
     {
         $data['category'] = CategoryModel::find($id);
