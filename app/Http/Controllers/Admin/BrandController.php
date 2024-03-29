@@ -44,7 +44,7 @@ class BrandController extends Controller
         request()->validate([
             'slug' => 'required|unique:brands,slug,'.$id,
         ]);
-        $brand = brandModel::find($id);
+        $brand = BrandModel::find($id);
         $brand->name = trim($request->name);
         $brand->slug = trim($request->slug);
         $brand->status = $request->status;

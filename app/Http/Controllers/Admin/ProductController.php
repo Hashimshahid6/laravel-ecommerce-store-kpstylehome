@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function list(){
+        $data['products'] = ProductModel::getProducts();
         $data['header_title'] = 'Product List';
         return view('admin.product.list', $data);
     }//
